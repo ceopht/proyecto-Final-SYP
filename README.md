@@ -3,7 +3,7 @@ PICDA (Programa Integral Contable Dedicado Administrativo) es un software contab
 
 ## Instalación
 
-###Base de datos
+**Base de datos***
 Dentro de la carpeta Database se encuntra un archivo llamado ***records.sql***, este debe de ser importado a al gestor de base de datos sql que se este utilizando
 ## Documentación 
 
