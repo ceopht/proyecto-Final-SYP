@@ -1,0 +1,24 @@
+---Ejemplo para dividir los datos del query en filas de
+
+$datos = mostrarVentaFRF("2021-05-02","2021-05-03");
+while($row = mysqli_fetch_assoc($datos)) {
+    echo "<pre>";
+    print_r($row);
+    echo "</pre>";
+}
+
+---Ejemplo para apartir de esa fila sacar un elemento
+$row['fecha'];
+
+---Variables que trae la función mostrarDatosU() y buscarUsuario()
+id, user, type, pass
+
+--Variables que trae la función mostrarDatosC() y buscarCliente()
+id, nombre, NRC
+
+--Variables que trae la función mostrarDatosVF(), mostrarVentaFRF() y buscarVentaF()
+id, fecha, nFactura, Total
+FRF significa Final Rango de Fechas
+
+--Variables que trae la función mostrarDatosVC(), mostrarVentaCRF() y buscarVentaC()
+id, fecha, nFactura, idCliente, venta, IVA, nombre, NRC
