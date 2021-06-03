@@ -25,14 +25,14 @@
                 <div class="card-header">Libro de IVA consumidor final</div>
             <div class="card-body">
                 <p class="card-text">Informe que muestra el registro de ventas a consumidor final de la semana</p>
-                <a href="Libros_IVA/consumidor_final.php" class="btn btn-primary">Registrar ventas</a>
+                <a href="Libros_IVAS/consumidor_final.php" class="btn btn-primary">Registrar ventas</a>
             </div>
 
             <div class="card">
                 <div class="card-header">Libro de IVA contribuidor</div>
             <div class="card-body">
                 <p class="card-text">Informe que muestra el registro de ventas a contribuidor de la semana</p>
-                <a href="Libros_IVA/contribuidor.php" class="btn btn-primary">Registrar ventas</a>
+                <a href="Libros_IVAS/contribuidor.php" class="btn btn-primary">Registrar ventas</a>
             </div>
 
     </div>
