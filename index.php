@@ -1,3 +1,3 @@
 <?php
-    include("Database\VentascontribuyenteCRUD.php");    
+    //include_once("Database\VentascontribuyenteCRUD.php");    
 ?>

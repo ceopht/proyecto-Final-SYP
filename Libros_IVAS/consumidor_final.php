@@ -10,7 +10,7 @@
 <body>
     <?php
 
-    include_once('../Database/VentasFinalCRUD.php');
+    include_once ('../Database/VentasFinalCRUD.php');
 
     $diaSemana = date("w");
     $tiempoDeInicioDeSemana = strtotime("-" . $diaSemana . " days");
