@@ -85,4 +85,3 @@
 </body>
 </html>
 
-<?php include_once ('funcionesJS.php');
