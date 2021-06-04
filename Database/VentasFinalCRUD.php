@@ -34,7 +34,7 @@ function insertarVentaF($fecha,$nFactura,$Total){
     //Formato de fecha AAAA-MM-DD
     try {
         $con=connect();
-        $sql = "INSERT INTO ventasFinal(fecha,nFactura,Total) VALUES('$fecha','$nFactura','$Total')";
+        $sql = "INSERT INTO ventasfinal(fecha,nFactura,Total) VALUES('$fecha','$nFactura','$Total')";
         $resultado=mysqli_query($con,$sql);
         $con=null;
     } catch (Exception $e) {
@@ -46,7 +46,7 @@ function insertarVentaF($fecha,$nFactura,$Total){
 function editarVentaF($fecha,$nFactura,$Total,$id){
     try {
         $con=connect();
-        $sql = "UPDATE ventasFinal SET fecha='$fecha', nFactura='$nFactura', Total='$Total' WHERE id='$id'";
+        $sql = "UPDATE ventasfinal SET fecha='$fecha', nFactura='$nFactura', Total='$Total' WHERE id='$id'";
         $resultado=mysqli_query($con,$sql);
         $con=null;
     } catch (Exception $e) {
