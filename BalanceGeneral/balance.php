@@ -1,3 +1,8 @@
+<?php
+include_once('datosIniciales.php');
+$datos = valores();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +17,12 @@
     <div class="d-flex justify-content-center mt-4 container-fluid">
     
         <div class="row d-flex justify-content-center">
-                <h4 class="text-center">Balance general</h4>
+            <h4 class="text-center">Balance general al <?=date("d-m-Y")?></h4>
             <div class="col-4 m-4">
                 <h4>Activo</h4>
                 
                 <div id="activo">
-                
+                    <?php agregarActivo($datos["efectivo"],$datos["ivaFinal"],$datos["ivaContribuidor"]) ?>
                 </div>
 
                 <div class='row mb-3'>
@@ -29,10 +34,10 @@
 
             <div class="col-4 m-4">
 
-                <h4>Pasivo</43>
+                <h4>Pasivo</h4>
 
                 <div id="pasivo">
-                
+                    <?php agregarPasivo($datos["ivaFinal"],$datos["ivaContribuidor"])?>
                 </div>
                 
                 <div class='row mb-3'>
@@ -43,7 +48,7 @@
                 <h4>Capital</h4>
 
                 <div id="capital">
-                
+                    <?php agregarCapital($datos["efectivo"])?>
                 </div>
 
                 <div class='row mb-3'>

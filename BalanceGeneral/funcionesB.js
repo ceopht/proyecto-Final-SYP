@@ -6,26 +6,37 @@ let ctv=0;
 let psv=0;
 let cptl=0;
 
+let bordes = "style='border:0px; border-bottom:1px solid black;'"
+
+$(document).ready(function(){
+    totalActivo();
+    totalPasivo();
+    totalCapital();
+    document.querySelector(".paca").innerHTML ="Total pasivo más capital: "+ pasivoCapi();
+    document.querySelector(".act").innerHTML = "Total activo: "+resultado;
+    asignarColores();
+});
+
 const activo = () => {
     let html = "<div class='row mb-3'>";
-    html += '<div class="col-sm"><input type="text" class="form-control '+activos+' active" placeholder="Cuenta"></div>'
-    html += '<div class="col-sm"><input type="text" class="form-control '+activos+' activeForm" placeholder="Valor" onkeyup="totalActivo()"></div></div>';
+    html += '<div class="col-sm"><input type="text" class="form-control active" '+bordes+' placeholder="Cuenta"></div>'
+    html += '<div class="col-sm"><input type="text" class="form-control activeForm" placeholder="Valor" onkeyup="totalActivo()"></div></div>';
     $('#activo').append(html);
     activos++;
 }
 
 const pasivo = () => {
     let html = "<div class='row mb-3'>";
-    html += '<div class="col-sm"><input type="text" class="form-control '+pasivos+' passive" placeholder="Cuenta"></div>'
-    html += '<div class="col-sm"><input type="text" class="form-control '+pasivos+' passiveForm" placeholder="Valor" onkeyup="totalPasivo()"></div></div>';
+    html += '<div class="col-sm"><input type="text" class="form-control passive" '+bordes+' placeholder="Cuenta"></div>'
+    html += '<div class="col-sm"><input type="text" class="form-control passiveForm" placeholder="Valor" onkeyup="totalPasivo()"></div></div>';
     $('#pasivo').append(html);
     pasivos++;
 }
 
 const capital= () => {
     let html = "<div class='row mb-3'>";
-    html += '<div class="col-sm"><input type="text" class="form-control '+capitales+' capi" placeholder="Cuenta"></div>'
-    html += '<div class="col-sm"><input type="text" class="form-control '+capitales+' capiForm" onkeyup="totalCapital()" placeholder="Valor"></div></div>';
+    html += '<div class="col-sm"><input type="text" class="form-control capi" '+bordes+' placeholder="Cuenta"></div>'
+    html += '<div class="col-sm"><input type="text" class="form-control capiForm" onkeyup="totalCapital()" placeholder="Valor"></div></div>';
     $('#capital').append(html);
     capitales++;
 }
