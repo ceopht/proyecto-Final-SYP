@@ -17,6 +17,19 @@ function mostrarDatosVC(){
     
 }
 
+function datosBalanceVC($fInicial,$fFinal){
+    try {
+        //Conección y ejecución del query
+        $sql = "SELECT venta,IVA FROM ventascontribuyente WHERE fecha BETWEEN '$fInicial' AND '$fFinal'";
+        $con=connect();
+        $resultado=mysqli_query($con,$sql);
+        $con=null;
+        return $resultado;
+    } catch (Exception $e) {
+        die(e->getMessage());
+    }
+}
+
 function mostrarVentaCRF($fInicial,$fFinal){                    //Mostrar datos por rango de fechas
     try {
         //Conección y ejecución del query

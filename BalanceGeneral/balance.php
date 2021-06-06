@@ -1,6 +1,21 @@
 <?php
 include_once('datosIniciales.php');
-$datos = valores();
+$inicioMes;
+$finMes;
+$day;
+
+if(isset($_SESSION['fInicial'])){
+    $inicioMes = $_SESSION['fInicial'];
+    $finMes = $_SESSION['fFinal'];
+    $day = date("d-m-Y", strtotime($finMes));
+    session_unset(); 
+}else{
+    $inicioMes = date("Y-m-01");
+    $finMes = date("Y-m-t");
+    $day=date("d-m-Y");
+}
+
+$datos = valores($inicioMes,$finMes);
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +32,7 @@ $datos = valores();
     <div class="d-flex justify-content-center mt-4 container-fluid">
     
         <div class="row d-flex justify-content-center">
-            <h4 class="text-center">Balance general al <?=date("d-m-Y")?></h4>
+            <h4 class="text-center">Balance general al <?=$day?></h4>
             <div class="col-4 m-4">
                 <h4>Activo</h4>
                 
@@ -77,6 +92,29 @@ $datos = valores();
                         <input type="button" class="btn btn-outline-secondary m-2" value="Agregar cuenta de pasivo" onclick="pasivo()">
                         <input type="button" class="btn btn-outline-secondary m-2" value="Agregar cuenta de capital" onclick="capital()">
                     </div>    
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <div class="row m-2">
+                    <form action="changeDate.php" method="post">
+                        <div class="btn-group" role="group" aria-label="Basic outlined example">
+
+                            <div class="m-1">
+                                <label class="form-label m-2">Fecha inicial</label>
+                                <input type="date" name="fInicial" class="form-control" value="<?=$inicioMes?>">
+                            </div>
+                            
+                            <div class="m-1">
+                                <label class="form-label m-2">Fecha final</label>
+                                <input type="date" name="fFinal" class="form-control" value="<?=$finMes?>">
+                            </div>
+                            
+                            <input type="submit" class="btn btn-secondary m-1 rounded" value="Generar por fecha">
+                            
+                        </div>
+                    </form>
+                
                 </div>    
 
             </div>

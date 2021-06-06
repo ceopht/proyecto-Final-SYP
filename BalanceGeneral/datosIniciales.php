@@ -2,12 +2,10 @@
 include_once ('../Database/VentasFinalCRUD.php');
 include_once ('../Database/VentasContribuyenteCRUD.php');
 
-function valores(){
-    $inicioMes = date("Y-m-01");
-    $finMes = date("Y-m-t");
+function valores($inicioMes,$finMes){
 
-    $final = mostrarVentaFRF($inicioMes,$finMes);
-    $contribuidor = mostrarVentaCRF($inicioMes,$finMes);
+    $final = datosBalanceVF($inicioMes,$finMes);
+    $contribuidor = datosBalanceVC($inicioMes,$finMes);
 
     $datos = [
     "ventasFinal" => 0,
