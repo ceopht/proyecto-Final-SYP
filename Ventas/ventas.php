@@ -16,6 +16,17 @@
     <div class="d-flex justify-content-center m-4">
         <div class="col-md-4">
         
+            <?php if (isset($_SESSION['message'])) { ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Venta registrada</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php 
+            session_unset(); 
+            }
+
+            ?>
+
             <h3 class="text-center m-4">Registro de ventas</h3>
 
             <form action="guardarVenta.php" method="post">
@@ -42,7 +53,7 @@
 
                     <div class="m-4 total">
                         <label class="form-label m-2">Total</label>
-                        <input type="number" name="total" class="validar1 m-2 form-control">
+                        <input type="number" name="total" step="0.01" class="validar1 m-2 form-control">
                     </div>
 
                     <div class="m-4 nombre">
@@ -62,12 +73,12 @@
 
                     <div class="m-4 venta">
                         <label class="form-label m-2">Venta</label>
-                        <input type="number" name="venta" class="validar2 m-2 form-control">
+                        <input type="number" name="venta" step="0.01" class="validar2 m-2 form-control">
                     </div>
 
                     <div class="m-4 IVA">
                         <label class="form-label m-2">IVA</label>
-                        <input type="number" name="IVA" class="validar2 m-2 form-control">
+                        <input type="number" name="IVA" step="0.01" class="validar2 m-2 form-control">
                     </div>
                     
                     <div class="text-center">
@@ -82,6 +93,7 @@
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="funcionesV.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>
 

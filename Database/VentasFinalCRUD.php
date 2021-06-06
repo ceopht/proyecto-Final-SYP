@@ -17,6 +17,19 @@ function mostrarDatosVF(){
     
 }
 
+function datosBalanceVF($fInicial,$fFinal){
+    try {
+        //Conección y ejecución del query
+        $sql = "SELECT Total FROM ventasfinal WHERE fecha BETWEEN '$fInicial' AND '$fFinal'";
+        $con=connect();
+        $resultado=mysqli_query($con,$sql);
+        $con=null;
+        return $resultado;
+    } catch (Exception $e) {
+        die(e->getMessage());
+    }
+}
+
 function mostrarVentaFRF($fInicial,$fFinal){                    //Mostrar datos por rango de fechas
     try {
         //Conección y ejecución del query

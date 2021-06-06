@@ -22,3 +22,9 @@ FRF significa Final Rango de Fechas
 
 --Variables que trae la función mostrarDatosVC(), mostrarVentaCRF() y buscarVentaC()
 id, fecha, nFactura, idCliente, venta, IVA, nombre, NRC
+
+--Variables que trae la función datosBalanceVC()
+venta, IVA, 
+
+--Variables que trae la función datosBalanceVF()
+Total
