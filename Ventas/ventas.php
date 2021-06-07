@@ -82,7 +82,7 @@
                     </div>
                     
                     <div class="text-center">
-                        <input type="submit" value="Registrar compra" class="btn btn-primary">
+                        <input type="submit" value="Registrar venta" class="btn btn-primary">
                     </div>
                 </div>
             </form>

@@ -1,7 +1,19 @@
 <?php 
 include_once ("connection.php");
 
-
+function datosEspecificosC($id){
+    try {
+        //Conección y ejecución del query
+        $sql = "SELECT * FROM ventascontribuyente WHERE id ='$id'";
+        $con=connect();
+        $resultado=mysqli_query($con,$sql);
+        $con=null;
+        return $resultado;
+    } catch (Exception $e) {
+        die(e->getMessage());
+    }
+    
+}
 
 function mostrarDatosVC(){
     try {
@@ -81,7 +93,7 @@ function borrarVentaC($id){
 function buscarVentaC($valor,$opcion){
     /*Se podra buscar el dato deseado
     Las opciones son:
-    id, fecha, nFactura, Total
+    fecha,nFactura,idCliente,venta,IVA
     */
     try {
         //Conección y ejecución del query
