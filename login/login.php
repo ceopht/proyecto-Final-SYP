@@ -12,19 +12,21 @@
 </head>
 
 <body>
-    <div class="container mt-5" >
+    <div class="container mt-5">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card p-5 text-white" id="continerLogin">
                 <h5 class="card-title text-center">Login</h5>
-                <form>
+                <form id="formulario">
                     <div class="form-label-group">
-                        <label for="inputEmail">Nombre de usuario</label>
-                        <input type="text" id="usuario" class="form-control" placeholder="Usuario">
+                        <label>Nombre de usuario</label>
+                        <input type="text" name="usuario" id="usuario" class="form-control entrada"
+                            placeholder="Usuario">
                     </div>
                     <br>
                     <div class="form-label-group">
                         <label for="inputPassword">Contraseña</label>
-                        <input type="password" id="contraseña" class="form-control" placeholder="*********">
+                        <input type="password" name="contraseña" id="contraseña" class="form-control entrada"
+                            placeholder="*********">
                     </div>
                     <br>
                     <button class="btn btn-outline-light" type="submit">Ingresar</button>
@@ -32,10 +34,26 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
-    <script src="validar_espacios.js"></script>
+    <div class="modal" tabindex="-1" role="dialog" id="modalAlerta">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Alerta!</h4>
+                </div>
+                <div class="modal-body" id="alerta">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="ocultarModal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="validar_espacios.js"></script>
 </body>
 
 </html>
