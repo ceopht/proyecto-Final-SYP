@@ -67,5 +67,19 @@ function buscarCliente($valor,$opcion){
         die(e->getMessage());
     }
 }
+
+function  datosEspecificosC($idCliente){
+    try {
+        //Conección y ejecución del query
+        $sql = "SELECT * FROM clientes WHERE idCliente ='$idCliente'";
+        $con=connect();
+        $resultado=mysqli_query($con,$sql);
+        $con=null;
+        return $resultado;
+    } catch (Exception $e) {
+        die(e->getMessage());
+    }
+
+} 
     
 ?>
