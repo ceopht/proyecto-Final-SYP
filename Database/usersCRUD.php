@@ -67,5 +67,19 @@ function buscarUsuario($valor,$opcion){
         die(e->getMessage());
     }
 }
+
+function datosEspecificosU($id){
+    try {
+        //Conección y ejecución del query
+        $sql = "SELECT * FROM users WHERE id ='$id'";
+        $con=connect();
+        $resultado=mysqli_query($con,$sql);
+        $con=null;
+        return $resultado;
+    } catch (Exception $e) {
+        die(e->getMessage());
+    }
+
+}
     
 ?>
