@@ -16,7 +16,7 @@
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card p-5 text-white" id="continerLogin">
                 <h5 class="card-title text-center">Login</h5>
-                <form id="formulario">
+                <form id="formulario" action="../login/logear.php" method="post">
                     <div class="form-label-group">
                         <label>Nombre de usuario</label>
                         <input type="text" name="usuario" id="usuario" class="form-control entrada"
