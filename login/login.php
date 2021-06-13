@@ -1,3 +1,12 @@
+<?php
+if(!empty($_GET)&& isset($_GET['status'])){
+    $loginErr = '<br><br><div class="alert alert-danger">Usuario o contraseña incorrecto</div>';
+}else{
+    $loginErr=null;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,6 +39,7 @@
                     </div>
                     <br>
                     <button class="btn btn-outline-light" type="submit">Ingresar</button>
+                    <?=$loginErr;?>
                 </form>
             </div>
         </div>
