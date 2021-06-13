@@ -1,4 +1,6 @@
+
 <?php
+// MENSAJE DE ALERTA DE ERROR DE DATOS ERRORNEOS AL BUSCAR USUARIO
 if(!empty($_GET)&& isset($_GET['status'])){
     $loginErr = '<br><br><div class="alert alert-danger">Usuario o contraseña incorrecto</div>';
 }else{
@@ -21,6 +23,7 @@ if(!empty($_GET)&& isset($_GET['status'])){
 </head>
 
 <body>
+    <!-- plantilla de login -->
     <div class="container mt-5">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card p-5 text-white" id="continerLogin">
@@ -44,6 +47,7 @@ if(!empty($_GET)&& isset($_GET['status'])){
             </div>
         </div>
     </div>
+    <!-- MENSAJE MODAL DE DATOS VACION -->
     <div class="modal" tabindex="-1" role="dialog" id="modalAlerta">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -57,7 +61,7 @@ if(!empty($_GET)&& isset($_GET['status'])){
                 </div>
             </div>
         </div>
-
+    <!-- SCRIPTS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>
