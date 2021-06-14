@@ -11,7 +11,7 @@
     <?php
 
     include_once ('../Database/VentasFinalCRUD.php');
-
+    $total=0;
     $diaSemana = date("w");
     $tiempoDeInicioDeSemana = strtotime("-" . $diaSemana . " days");
     $fechaInicioSemana = date("Y-m-d", $tiempoDeInicioDeSemana);
@@ -20,18 +20,23 @@
 
     $datos = mostrarVentaFRF($fechaInicioSemana,$fechaFinSemana);
     echo "
-        <div class='container-fluid'>
-        <table class='table table-hover text-nowrap'>
+    <div class='card'>
+        <div class='card-header'>
+            <div>
+                <p class='text-center font-weight-bold fs-3'>LIBRO DE IVA CONSUMIDOR FINAL</p>
+                <p class='text-center'><span class='fs-5'>Semana del  [ {$fechaInicioSemana} - {$fechaFinSemana} ]</span></p>
+            </div>
+            <div>
+                <p class='text-center'><span class='fs-4'>Nombre del contribuyente: Diego Herrera</span></p>
+                <div class='d-flex justify-content-evenly'>
+                    <span class='fs-4'>N.C.R.:1957-0</span>
+                <span class='fs-4'>NIT:0561-017231-111-5</span>
+                </div>
+            </div>
+        </div>
+        <div class='card-body'>
+        <table class='table table-hover table-striped'>
         <thead>
-            <tr>
-            <p class='text-center font-weight-bold fs-3'>LIBRO DE IVA CONSUMIDOR FINAL </p>
-            <p class='text-center'><span class='fs-5'>Semana del  [ {$fechaInicioSemana} - {$fechaFinSemana} ]</span></p>
-            </tr>
-            <tr>
-                <td colspan='2'><p class='text-center'><span class='fs-4'>Nombre del contribuyente: Diego Herrera</span></p></td>
-                <td><p class='text-center'><span class='fs-4'>N.C.R.:1957-0</span></p></td>
-                <td><p class='text-center'><span class='fs-4'>NIT:0561-017231-111-5</span></p></td>
-            </tr>
             <tr>
                 <th scope='col'>ID Factura</th>
                 <th scope='col'>Fecha</th>
@@ -60,13 +65,16 @@
             </td>
         </tr>
         ";
+        
+        $total+=$row["Total"];
     }
-
+    
     echo'
             </tbody>
         </table>
     </div>
     ';
+    echo"<div class='card-footer'> Total: <span class='text-success  ml-3'>$ {$total}</span></div>";
 
     ?>
 
