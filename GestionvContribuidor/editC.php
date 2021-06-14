@@ -5,7 +5,7 @@ include_once ('../Database/clientesCRUD.php');
 $datos;
 
 if(isset($_GET['id'])){
-    $datos = datosEspecificosC($_GET['id']);
+    $datos = datosEspecificosCo($_GET['id']);
 }
 $row = mysqli_fetch_assoc($datos);
 
