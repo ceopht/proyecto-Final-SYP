@@ -1,0 +1,25 @@
+.img{
+   
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 50%;
+    right: 90px;
+    border-radius: 2px black;
+
+    
+   
+}
+
+body{
+    background: linear-gradient(to right, #928bee, #459ce4,#ac66cc,#cc63da);
+
+}
+
+.texto{
+    justify-content: center;
+    position:absolute;
+    top: 30px; 
+    right: 35%;
+    font-family: 'Stint Ultra Condensed', cursive;
+}
