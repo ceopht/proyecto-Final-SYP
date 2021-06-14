@@ -1,0 +1,31 @@
+body
+{
+background: linear-gradient(to right, #293b5f, #125d98,#2541b2,#3c8dad);
+background-color: #2541b2;
+}
+.nombre
+{
+   font-family: 'Staatliches', cursive;
+   font-size: 70px;
+ 
+}
+.agg
+{
+   font-family: 'Mate', serif;
+}
+.mostrar
+{
+   font-family: 'Mate', serif; 
+}
+.insertar
+{
+   position: absolute;
+   left:  250px;
+   top: 150px;
+}
+.buscar
+{
+    position: absolute;
+    left: 850px;
+   top: 150px;
+}
