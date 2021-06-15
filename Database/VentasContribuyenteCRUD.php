@@ -1,7 +1,7 @@
 <?php 
 include_once ("connection.php");
 
-function datosEspecificosC($id){
+function datosEspecificosCo($id){
     try {
         //Conección y ejecución del query
         $sql = "SELECT * FROM ventascontribuyente WHERE id ='$id'";

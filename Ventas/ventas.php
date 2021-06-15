@@ -13,6 +13,19 @@
     <title>Registro de ventas</title>
 </head>
 <body>
+    <?php
+    if(!isset($_COOKIE['session_id'])){             //Si no se tiene un token de logeo
+        header('Location: ../login/login.php');
+    }elseif($_SESSION['type']=="vendedor"){         //Si el usuario es un vendedor
+        include_once ('../navBar/NBVendedor.php');   
+    }elseif($_SESSION['type']=="admin"){                //Si el usuario es un administrador
+        include_once ('../navBar/NBAdmin.php');
+    }elseif($_SESSION['type']=="contador"){             //si el usuario es un contador
+        header('Location: ../BalanceGeneral/balance.php');
+    }else{                                          //si no tiene un rol definido
+        header('Location: ../login/login.php');
+    }
+    ?>
     <div class="d-flex justify-content-center m-4">
         <div class="col-md-4">
         
@@ -22,7 +35,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             <?php 
-            session_unset(); 
+            session_unset();
             }
 
             ?>
