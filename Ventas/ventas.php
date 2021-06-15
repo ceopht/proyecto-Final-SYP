@@ -18,9 +18,9 @@
         header('Location: ../login/login.php');
     }elseif($_SESSION['type']=="vendedor"){         //Si el usuario es un vendedor
         include_once ('../navBar/NBVendedor.php');   
-    }if($_SESSION['type']=="admin"){                //Si el usuario es un administrador
+    }elseif($_SESSION['type']=="admin"){                //Si el usuario es un administrador
         include_once ('../navBar/NBAdmin.php');
-    }if($_SESSION['type']=="contador"){             //si el usuario es un contador
+    }elseif($_SESSION['type']=="contador"){             //si el usuario es un contador
         header('Location: ../BalanceGeneral/balance.php');
     }else{                                          //si no tiene un rol definido
         header('Location: ../login/login.php');

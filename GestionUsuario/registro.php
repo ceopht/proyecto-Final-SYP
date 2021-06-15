@@ -13,7 +13,7 @@
 
 include_once ('../Database/usersCRUD.php');
 
-insertarUsuario($_POST['email'],$_POST['cargo'],$_POST['password']);
+insertarUsuario($_POST['email'],$_POST['cargo'],password_hash($_POST['password'],PASSWORD_DEFAULT));
 
     $_SESSION['message'] = 'usuario registrada';
     $_SESSION['message_type'] = 'success';

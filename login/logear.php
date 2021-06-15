@@ -21,6 +21,12 @@
         if($_SESSION['type']=="vendedor"){
             header('Location: ../Ventas/ventas.php');
         }
+        if($_SESSION['type']=="contador"){
+            header('Location: ../BalanceGeneral/balance.php');
+        }
+        if($_SESSION['type']=="admin"){
+            header('Location: ../BalanceGeneral/balance.php');
+        }
     }
     else{   //Si el usuario no coincide con la contraseña o no existe
         header('Location: ../login/login.php?status=error');

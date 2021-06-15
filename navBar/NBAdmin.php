@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand">Usuario</a>
+    <a class="navbar-brand"><?php echo $_SESSION['user'];?></a>
     <button class="navbar-toggler">
       <i class="fas fa-bars"></i>
     </button>
@@ -28,6 +28,9 @@
         </li>   
         <li class="nav-item">
           <a class="nav-link" href="../Ventas/ventas.php">Ventas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../BalanceGeneral/balance.php">Balance General</a>
         </li>
       </ul>
         <a href="../login/cerrarSesion.php">
