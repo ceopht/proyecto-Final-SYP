@@ -11,7 +11,6 @@
     <?php
 
     include_once ('../Database/VentasContribuyenteCRUD.php');
-
     if(!isset($_COOKIE['session_id'])){             //Si no se tiene un token de logeo
         header('Location: ../login/login.php');
     }

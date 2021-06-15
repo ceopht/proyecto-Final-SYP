@@ -1,5 +1,15 @@
 <?php
 include_once ('../Database/VentasFinalCRUD.php');
+  if(!isset($_COOKIE['session_id'])){             //Si no se tiene un token de logeo
+    header('Location: ../login/login.php');
+  }
+  if($_SESSION['type']=="vendedor"){         //Si el usuario es un vendedor
+    header('Location: ../Ventas/ventas.php');  
+  }if($_SESSION['type']=="admin"){                //Si el usuario es un administrador
+    include_once ('../navBar/NBAdmin.php');
+  }if($_SESSION['type']=="contador"){             //si el usuario es un contador
+    header('Location: ../BalanceGeneral/balance.php');
+  }
 
 $opcion = "fecha";
 $valor = date("Y-m-d");

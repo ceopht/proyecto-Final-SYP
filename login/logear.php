@@ -7,11 +7,12 @@
     $comparar = mysqli_fetch_assoc($datos);//extraccion de los datos
 
     if(password_verify($pass,$comparar['pass'])){   //Verificacion de contraseña
+        session_start();
         setcookie('session_id','562tfydwhsbdj2iqdwkn',time()+7200,'/'); //Creacion de la cookie
         //busqueda y seteo de los datos del usuario ya verificado
         $buscar_usu=buscarUsuario($user,"user");
         $datos_usu = mysqli_fetch_assoc($buscar_usu);
-
+        
         // seteo de sus valores en la session
         $_SESSION['id'] = $datos_usu['id'];
         $_SESSION['user'] = $datos_usu['user'];
@@ -25,7 +26,7 @@
             header('Location: ../BalanceGeneral/balance.php');
         }
         if($_SESSION['type']=="admin"){
-            header('Location: ../BalanceGeneral/balance.php');
+            header('Location: ../GestionUsuario/formulario.php');
         }
     }
     else{   //Si el usuario no coincide con la contraseña o no existe
