@@ -16,6 +16,11 @@
         $_SESSION['id'] = $datos_usu['id'];
         $_SESSION['user'] = $datos_usu['user'];
         $_SESSION['type'] = $datos_usu['type'];
+
+        // comparar tipos de usuarios
+        if($_SESSION['type']=="vendedor"){
+            header('Location: ../Ventas/ventas.php');
+        }
     }
     else{   //Si el usuario no coincide con la contraseña o no existe
         header('Location: ../login/login.php?status=error');
