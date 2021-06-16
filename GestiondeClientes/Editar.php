@@ -24,16 +24,24 @@ if(isset($_GET['idCliente'])){
  $row = mysqli_fetch_assoc($datos);
 
 if(isset($_POST['idCliente'])){
-editarCliente($_POST['nombre'],$_POST['NRC'],$_POST['idCliente']);
+    editarCliente($_POST['nombre'],$_POST['NRC'],$_POST['idCliente']);
 
-$_SESSION['message'] = 'Cliente Actualizado con éxito';
-$_SESSION['message_type'] = 'success';
+    $_SESSION['message'] = 'Cliente Actualizado con éxito';
+    $_SESSION['message_type'] = 'success';
 
-header('Location: Mostrar.php');
-
-
-
+    header('Location: Mostrar.php');
  }
+if(!isset($_COOKIE['session_id'])){             //Si no se tiene un token de logeo
+    header('Location: ../login/login.php');
+}
+if($_SESSION['type']=="vendedor"){         //Si el usuario es un vendedor
+    header('Location: ../Ventas/ventas.php');  
+}if($_SESSION['type']=="admin"){                //Si el usuario es un administrador
+    include_once ('../navBar/NBAdmin.php');
+}if($_SESSION['type']=="contador"){             //si el usuario es un contador
+    header('Location: ../BalanceGeneral/balance.php');
+}
+
 ?>
 
 <div class="d-flex justify-content-center m-4">
@@ -70,7 +78,7 @@ header('Location: Mostrar.php');
         </div>
         
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </body>
 </html>

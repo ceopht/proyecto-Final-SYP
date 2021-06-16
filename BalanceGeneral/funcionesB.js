@@ -20,7 +20,7 @@ $(document).ready(function(){
 const activo = () => {
     let html = "<div class='row mb-3'>";
     html += '<div class="col-sm"><input type="text" class="form-control active" '+bordes+' placeholder="Cuenta"></div>'
-    html += '<div class="col-sm"><input type="text" class="form-control activeForm" placeholder="Valor" onkeyup="totalActivo()"></div></div>';
+    html += '<div class="col-sm"><input type="number" step="0.01" min="0" class="form-control activeForm" placeholder="Valor" onkeyup="totalActivo()"></div></div>';
     $('#activo').append(html);
     activos++;
 }
@@ -28,7 +28,7 @@ const activo = () => {
 const pasivo = () => {
     let html = "<div class='row mb-3'>";
     html += '<div class="col-sm"><input type="text" class="form-control passive" '+bordes+' placeholder="Cuenta"></div>'
-    html += '<div class="col-sm"><input type="text" class="form-control passiveForm" placeholder="Valor" onkeyup="totalPasivo()"></div></div>';
+    html += '<div class="col-sm"><input type="number" step="0.01" min="0" class="form-control passiveForm" placeholder="Valor" onkeyup="totalPasivo()"></div></div>';
     $('#pasivo').append(html);
     pasivos++;
 }
@@ -36,7 +36,7 @@ const pasivo = () => {
 const capital= () => {
     let html = "<div class='row mb-3'>";
     html += '<div class="col-sm"><input type="text" class="form-control capi" '+bordes+' placeholder="Cuenta"></div>'
-    html += '<div class="col-sm"><input type="text" class="form-control capiForm" onkeyup="totalCapital()" placeholder="Valor"></div></div>';
+    html += '<div class="col-sm"><input type="number" step="0.01" min="0" class="form-control capiForm" onkeyup="totalCapital()" placeholder="Valor"></div></div>';
     $('#capital').append(html);
     capitales++;
 }

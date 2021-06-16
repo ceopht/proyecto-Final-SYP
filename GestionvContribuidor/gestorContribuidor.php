@@ -1,6 +1,7 @@
 <?php
 include_once ('../Database/VentasContribuyenteCRUD.php');
 include_once ('../Database/clientesCRUD.php');
+
   if(!isset($_COOKIE['session_id'])){             //Si no se tiene un token de logeo
     header('Location: ../login/login.php');
   }
@@ -51,7 +52,8 @@ $datos = buscarVentaC($valor,$opcion);
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php 
-                session_unset(); 
+                unset($_SESSION['message']);
+                unset($_SESSION['message_type']);
                 }
 
                 ?>

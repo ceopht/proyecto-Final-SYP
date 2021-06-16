@@ -29,13 +29,16 @@
     <div class="d-flex justify-content-center m-4">
         <div class="col-md-4">
         
-            <?php if (isset($_SESSION['message'])) { ?>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>Venta registrada</strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
+            <?php if (isset($_SESSION['message'])) { 
+                if($_SESSION['message']=="Venta registrada"){
+                ?>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Venta registrada</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
             <?php 
-            session_unset();
+                }
+            unset($_SESSION['message']);
             }
 
             ?>
