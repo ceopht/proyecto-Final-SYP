@@ -17,8 +17,12 @@ $valor = date("Y-m-d");
 $seleccion = ["id","fecha","nFactura","Total"];
 
 if(isset($_SESSION['opcion'])){
-    $opcion = $_SESSION['opcion'];
-    $valor = $_SESSION['valor'];
+    if($_SESSION['valor']!=""){
+        $opcion = $_SESSION['opcion'];
+        $valor = $_SESSION['valor'];
+    }
+    unset($_SESSION['opcion']);
+    unset($_SESSION['valor']);
 }
 $datos = buscarVentaF($valor,$opcion);
 

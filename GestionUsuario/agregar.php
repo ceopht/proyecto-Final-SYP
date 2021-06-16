@@ -48,7 +48,7 @@ if (isset($_GET))
   <option selected>cargo</option>
   <option value="contador">contador</option>
   <option value="vendedor">vendedor</option>
-  <option value="administrador">admin</option>
+  <option value="admin">admin</option>
   </select>
 </div>
 </div>
