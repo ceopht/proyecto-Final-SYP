@@ -61,62 +61,64 @@ if(!empty($_GET)&& $_GET['status']=="semanal"){
             </div>
         </div>
         <div class='card-body'>
-                <div>Tiempo de registro:</div>
-                <div class="btn-group me-2" role="group">
-                    <a href="../Libros_IVAS/consumidor_final.php?status=diario">
-                        <button type="button" class="btn btn-outline-dark">Diario</button>
-                    </a>
-                    <a href="../Libros_IVAS/consumidor_final.php?status=semanal">
-                        <button type="button" class="btn btn-outline-dark">Semanal</button>
-                    </a>
-                    <a href="../Libros_IVAS/consumidor_final.php?status=mensual">
-                        <button type="button" class="btn btn-outline-dark">Mensual</button>
-                    </a>
-                </div>
-                <table class='table table-hover table-striped'>
-                    <thead>
-                        <tr>
-                            <th scope='col'>ID Factura</th>
-                            <th scope='col'>Fecha</th>
-                            <th scope='col'>N° Factura</th>
-                            <th scope='col'>Cantidad de venta</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
+            <div class="mb-2">Tiempo de registro:</div>
+            <div class="btn-group me-2" role="group">
+                <a href="../Libros_IVAS/consumidor_final.php?status=diario">
+                    <button type="button" class="btn btn-outline-dark mx-1">Diario</button>
+                </a>
+                <a href="../Libros_IVAS/consumidor_final.php?status=semanal">
+                    <button type="button" class="btn btn-outline-dark mx-1">Semanal</button>
+                </a>
+                <a href="../Libros_IVAS/consumidor_final.php?status=mensual">
+                    <button type="button" class="btn btn-outline-dark mx-1">Mensual</button>
+                </a>
+            </div>
+            <table class='table table-hover table-striped'>
+                <thead>
+                    <tr>
+                        <th scope='col'>ID Factura</th>
+                        <th scope='col'>Fecha</th>
+                        <th scope='col'>N° Factura</th>
+                        <th scope='col'>Cantidad de venta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
     while($row = mysqli_fetch_assoc($datos)) {
     ?>
+                    <tr>
+                        <td>
+                            <?=$row["id"]?>
+                        </td>
+                        <td>
+                            <?=$row["fecha"]?>
+                        </td>
+                        <td>
+                            <?=$row["nFactura"]?>
+                        </td>
+                        <td>
+                            <span class='text-success'>
+                                $ <span><?=$row["Total"]?></span>
+                            </span>
+                        </td>
+                    </tr>
 
-                        <tr>
-                            <td>
-                                <?=$row["id"]?>
-                            </td>
-                            <td>
-                                <?=$row["fecha"]?>
-                            </td>
-                            <td>
-                                <?=$row["nFactura"]?>
-                            </td>
-                            <td>
-                                <span class='text-success'>
-                                    $ <span><?=$row["Total"]?></span>
-                                </span>
-                            </td>
-                        </tr>
-
-                        <?php
+                    <?php
         $total+=$row["Total"];
     }
     ?>
 
-                    </tbody>
-                </table>
-            </div>
-            <div class='card-footer'> Total: <span class='text-success  ml-3'>$ <?=$total?></span></div>
+                </tbody>
+            </table>
+        </div>
+        <div class='card-footer'>
+            <div>Total: <span class='text-success  ml-3'>$ <?=$total?></span></div>
+        </div>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+    </div>
 </body>
 
 </html>
