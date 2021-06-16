@@ -8,7 +8,8 @@ if(isset($_SESSION['fInicial'])){
     $inicioMes = $_SESSION['fInicial'];
     $finMes = $_SESSION['fFinal'];
     $day = date("d-m-Y", strtotime($finMes));
-    session_unset(); 
+    unset($_SESSION['fInicial']);
+    unset($_SESSION['fFinal']);
 }else{
     $inicioMes = date("Y-m-01");
     $finMes = date("Y-m-t");
@@ -19,7 +20,7 @@ $datos = valores($inicioMes,$finMes);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -7,7 +7,6 @@
     $comparar = mysqli_fetch_assoc($datos);//extraccion de los datos
 
     if(password_verify($pass,$comparar['pass'])){   //Verificacion de contraseña
-        session_start();
         setcookie('session_id','562tfydwhsbdj2iqdwkn',time()+7200,'/'); //Creacion de la cookie
         //busqueda y seteo de los datos del usuario ya verificado
         $buscar_usu=buscarUsuario($user,"user");
