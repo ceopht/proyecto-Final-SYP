@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,8 +27,6 @@
 
     insertarCliente($_POST['nombre'],$_POST['NRC']);
 
-    $_SESSION['message'] = 'Cliente Ingresado';
-    $_SESSION['message_type'] = 'success';
     //header('Location: FormularioCliente.php');
 
     echo '<div class= "alert alert-info" >

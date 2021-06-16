@@ -29,7 +29,7 @@ $datos = buscarVentaF($valor,$opcion);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,7 +52,8 @@ $datos = buscarVentaF($valor,$opcion);
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php 
-                session_unset(); 
+                unset($_SESSION['message']);
+                unset($_SESSION['message_type']);
                 }
 
                 ?>
