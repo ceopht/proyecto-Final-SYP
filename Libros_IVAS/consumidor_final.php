@@ -46,7 +46,7 @@ if(!empty($_GET)&& $_GET['status']=="semanal"){
     $total=0;
     
     ?>
-    <div class='card'>
+    <div class='card p-4'>
         <div class='card-header'>
             <div>
                 <p class='text-center font-weight-bold fs-3'>LIBRO DE IVA CONSUMIDOR FINAL</p>

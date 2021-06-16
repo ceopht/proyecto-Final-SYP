@@ -48,10 +48,11 @@
     $sumTotal=0;
 
 ?>
-    <div class="card">
+    <div class="card p-4">
         <div class="card-header">
             <p class='text-center font-weight-bold fs-3'>LIBRO DE IVA CONTRIBUIDOR </p>
-            <p class='text-center'><span class='fs-5'>Registro</span></p>
+            <p class='text-center font-weight-bold fs-5'> Registro <span><?=$registro?></span></p>
+            </div>
             <div>
                 <p class='text-center'><span class='fs-4'>Nombre del contribuyente: Diego Herrera</span></p>
                 <div class='d-flex justify-content-evenly'>
