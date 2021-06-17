@@ -32,7 +32,7 @@ $row = mysqli_fetch_assoc($datos);
 if(isset($_POST['id']))
 {
  
-editarUsuario($_POST['usuario'], $_POST['cargo'],$_POST['contrasena'] ,$_POST['id']);
+editarUsuario($_POST['usuario'], $_POST['cargo'],password_hash($_POST['contrasena'],PASSWORD_DEFAULT) ,$_POST['id']);
 
   $_SESSION['message'] = 'Usuario actualizada con éxito';
   $_SESSION['message_type'] = 'success';
@@ -69,7 +69,7 @@ editarUsuario($_POST['usuario'], $_POST['cargo'],$_POST['contrasena'] ,$_POST['i
 <div class="mb-3 row">
     <label for="inputPassword" class="col-2 col-form-label">Password</label>
     <div class="col-10">
-    <input type="password" class="form-control" id="contrasena" name ="contrasena"  value="<?=$row['pass']?>">
+    <input type="password" class="form-control" id="contrasena" name ="contrasena"  value="" required>
     </div>
      </div>
     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example " name= cargo id= "cargo" >
