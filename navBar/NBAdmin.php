@@ -13,7 +13,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="../GestionUsuario/formulario.php">Gestion de usuarios</a></li>
             <li><a class="dropdown-item" href="../GestiondeClientes/FormularioCliente.php">Gestion de clientes</a></li>
-            <li><a class="dropdown-item" href="../GestionvCFinal/gestorContribuidor.php">Gestion de consumidor final</a></li>
+            <li><a class="dropdown-item" href="../GestionvCFinal/gestorCFinal.php">Gestion de consumidor final</a></li>
             <li><a class="dropdown-item" href="../GestionvContribuidor/gestorContribuidor.php">Gestion de contribuidor</a></li>
           </ul>
         </li>
