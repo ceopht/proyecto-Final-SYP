@@ -12,6 +12,6 @@ if($_POST['tipo']=="fecha"){
 }
 
 $_SESSION['opcion'] = $_POST['tipo'];
-header('Location: gestorContribuidor.php');
+header('Location: gestorCFinal.php');
 
 ?>
